@@ -66,8 +66,6 @@ PUB HT1632_Write(command) | i,j
     waitcnt(cnt+(CLKFREQ/10000))
     j := command & $0800
     command := command<<1
-    'j := j>>11
-    'j := j>>19
     j := j>>11
 
     outa[PIN_DAT] := j
