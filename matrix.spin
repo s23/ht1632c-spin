@@ -80,22 +80,25 @@ PUB HT1632_AddrWrite(address) | i,temp
   address := address & $7F
   outa[PIN_WCLK] := 0
   waitcnt(cnt+(CLKFREQ/10000))
-  outa[PIN_WCLK] := 1
+  outa[PIN_DAT] := 1
   waitcnt(cnt+(CLKFREQ/10000))
   outa[PIN_WCLK] := 1
   waitcnt(cnt+(CLKFREQ/10000))
   outa[PIN_WCLK] := 0
   waitcnt(cnt+(CLKFREQ/10000))
-  outa[PIN_WCLK] := 0
+  outa[PIN_DAT] := 0
   waitcnt(cnt+(CLKFREQ/10000))
   outa[PIN_WCLK] := 1
   waitcnt(cnt+(CLKFREQ/10000))
   outa[PIN_WCLK] := 0
   waitcnt(cnt+(CLKFREQ/10000))
-  outa[PIN_WCLK] := 1
+  outa[PIN_DAT] := 1
   waitcnt(cnt+(CLKFREQ/10000))
   outa[PIN_WCLK] := 1
   waitcnt(cnt+(CLKFREQ/10000))
+  outa[PIN_WCLK] := 0;
+  waitcnt(cnt+(CLKFREQ/10000))
+
 
   i := 0
   repeat until i == 6
